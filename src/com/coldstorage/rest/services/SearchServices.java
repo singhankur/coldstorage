@@ -17,15 +17,16 @@ public class SearchServices {
 
 	@Autowired
 	KisanRepository kisanRepository;
+
 	@Autowired
 	VypariRepository vypariRepository;
+
 	List<Vyapari> vypariList;
 	List<Kisan> kisanList;
-	List<SearchParams> outputlist;
+	List<SearchParams> outputlist = new ArrayList<>();
 	
 	public List<SearchParams> search(SearchParams searchParams) {
 
-		outputlist = new ArrayList<>();
 		vypariList = vypariRepository.findBySlipNumberLikeOrVypariNameLikeOrFatherNameLikeOrMobileLikeOrAddressLike( searchParams.getSlipNumber(),  searchParams.getName() ,  searchParams.getFatherName(),  searchParams.getMobile(),searchParams.getAddress());
 		kisanList = kisanRepository.findBySlipNumberLikeOrKisanNameLikeOrFatherNameLikeOrMobileLikeOrAddressLike( searchParams.getSlipNumber(),  searchParams.getName() ,  searchParams.getFatherName(),  searchParams.getMobile(),searchParams.getAddress());
 

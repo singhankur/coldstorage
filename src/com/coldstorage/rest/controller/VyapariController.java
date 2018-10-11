@@ -14,20 +14,17 @@ import com.coldstorage.rest.services.VyapariServices;
 
 @RestController
 public class VyapariController {
-
-
-
 	@Autowired
 	VyapariServices vyapariServices;
 	
-	
-			@RequestMapping(value = "/createVyapari", method = RequestMethod.POST)
-			public ResponseEntity<String> update(@RequestBody Vyapari vyapari) {
-				String sttus = "Invalid";
-			    if (vyapari != null) {
-			    	sttus = vyapariServices.addvypari(vyapari);
-			    }
-			    HttpHeaders httpHeaders = new HttpHeaders();
-			    return new ResponseEntity<String>(sttus, httpHeaders,HttpStatus.OK);
-			}
+
+	@RequestMapping(value = "/createVyapari", method = RequestMethod.POST)
+	public ResponseEntity<String> update(@RequestBody Vyapari vyapari) {
+		String sttus = "Invalid";
+		if (vyapari != null) {
+			sttus = vyapariServices.addvypari(vyapari);
+		}
+		HttpHeaders httpHeaders = new HttpHeaders();
+		return new ResponseEntity<String>(sttus, httpHeaders,HttpStatus.OK);
+	}
 }

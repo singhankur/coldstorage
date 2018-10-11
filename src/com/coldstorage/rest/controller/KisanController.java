@@ -20,13 +20,13 @@ public class KisanController {
 	KisanService kisanService;
 	
 	
-			@RequestMapping(value = "/createKisan", method = RequestMethod.POST)
-			public ResponseEntity<String> update(@RequestBody Kisan kisan) {
-				String sttus = "Invalid";
-			    if (kisan != null) {
-			    	sttus = kisanService.addKisan(kisan);
-			    }
-			    HttpHeaders httpHeaders = new HttpHeaders();
-			    return new ResponseEntity<String>(sttus, httpHeaders,HttpStatus.OK);
-			}
+	@RequestMapping(value = "/createKisan", method = RequestMethod.POST)
+	public ResponseEntity<String> update(@RequestBody Kisan kisan) {
+		String sttus = "Invalid";
+		if (kisan != null) {
+			sttus = kisanService.addKisan(kisan);
+		}
+		HttpHeaders httpHeaders = new HttpHeaders();
+		return new ResponseEntity<String>(sttus, httpHeaders,HttpStatus.OK);
+	}
 }
