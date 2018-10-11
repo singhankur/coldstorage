@@ -17,8 +17,10 @@ public class SearchServices {
 
 	@Autowired
 	KisanRepository kisanRepository;
+
 	@Autowired
 	VypariRepository vypariRepository;
+
 	List<Vyapari> vypariList;
 	List<Kisan> kisanList;
 	List<SearchParams> outputlist = new ArrayList<>();
